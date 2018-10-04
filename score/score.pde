@@ -9,6 +9,9 @@ int ballDiam;
 
 int [] score = {0, 0};
 
+float number;
+int [] counter = {0, 0};
+
 void setup() {
 
   size(500, 500);
@@ -26,7 +29,7 @@ void draw () {
 
   ballX += ballxdir;
   ballY += ballydir;
-
+  
   if (ballX == 0) { // ball 0 is for player two
     score[1] += 1; 
     println ("score board is: " + score[0] +" player 1 " + "   " + score[1] + " player 2");
@@ -41,6 +44,8 @@ void draw () {
   }
 
 
+
   fill(0); 
   ellipse( ballX, ballY, ballDiam, ballDiam);
+  
 }
