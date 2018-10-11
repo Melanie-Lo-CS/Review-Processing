@@ -3,15 +3,14 @@
 int ballX, ballposX;
 int ballY, ballposY;
 
-int ballxdir = 1;
-int ballydir = 1;
+int ballxdir = 1, ballydir = 1;
 int ballDiam;
 
 int [] score = {0,0};
 
 void setup() {
 
-  size(500, 500);
+  size(500, 600);
   ballposX = width/2; //Starting ball position 
   ballposY = height/2;
   ballY = ballposY;
@@ -36,6 +35,9 @@ void draw () {
   score[0] += 1;
   println ("score board is: " + score[0] +" player 1 " + "   " + score[1] + " player 2");
  
+  }
+      if (ballX == height || ballX == 0) {
+    ballxdir = ballxdir * (-1);
   }
   if (ballY == height || ballY == 0) {
     ballydir = ballydir * (-1);

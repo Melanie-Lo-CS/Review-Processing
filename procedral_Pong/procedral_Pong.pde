@@ -1,19 +1,27 @@
 // Global Variables (Note: any variables at the beginning of Tabs, before "void" are considered Global Variables)
 Boolean start = false;
-
+int ballX, ballposX;
+int ballY, ballposY;
+int ballxdir = 1, ballydir = 1;
+int ballDiam;
 //This File is the main file
 //It calls each Procedure in either setup() or draw()
 void setup() {
   size(500, 500);
+  
   gameStart(); //arithemetic to calcaulte starting positions of paddles and ball
+
 }
 
 void draw() {
+  
+  startStop();
   //Code to change "Start" Boolean Variable to true
-
-  if (start==true) { //Contains the entire Main File Code
-
-    playGame(); //Also contains "ball squish" procedure, with change in frameRate
+  
+if (start == true) {
+  
+    playGame(); 
+    //Also contains "ball squish" procedure, with change in frameRate
     // Also contains highlihgts for positive user feedback
     score(); //contains highlihgts for positive user feedback
   }
