@@ -1,7 +1,4 @@
-void score () {
-  //Printing Score to the Canvas and resetting game
-  
-  //Ball Movement within Pong Table after scoring
+void score(){
   if (ballX == 0+(ballDiam/2) || ballX == width-(ballDiam/2)) { //Score for Player 2, note the index
     if (ballX == 0+(ballDiam/2)) { //Player 2 Score
       score[1] += 1;
@@ -26,4 +23,4 @@ void score () {
   // Note: review of Character escape and this seems to "busy" on the screen
   text(score[1], width*4/5, height*1/5);
   println ("Score Board is: " + score[0] + " Player-1" + "     " + score[1] + " Player-2");
-}
+} 

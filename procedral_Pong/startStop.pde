@@ -1,12 +1,12 @@
-void startstop(){
+void startStop() {
   if (keyPressed) {
-    if (key == '');
+    if (key == ' '){
     start = true;
     }
   }
 if (keyPressed) {
-  if (key == 'q' key == 'Q') {
-    println('the canvas has exited');
+  if (key == 'q' || key == 'Q') {
+    println("the canvas has exited");
     exit();
   }
 }
