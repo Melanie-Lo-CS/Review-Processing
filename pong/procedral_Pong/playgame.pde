@@ -1,6 +1,6 @@
 void playGame () {
 
-  background(0); 
+  background(#E9FF03); //Yellow
 
   //Calcualting "next" ball position
   //Section necessary when calling functions so passing current arguements
@@ -25,26 +25,6 @@ void playGame () {
  
   if (keyPressed == true & key == CODED) {  
     if (keyCode == UP) {
-      if (player[3] >= 5) { 
-        player[3] -= 5; 
-      }
-      if (player[3] < 0) { //Catch any subtraction equalling less than zero
-        player[3] = 0;
-      }
-    }
-
-    if (keyCode == DOWN) {
-      if (player[3] + paddle[1] <= height) {
-        player[3] += 5; //Review incrementation other than +1
-      }
-      if (player[3] + paddle[1] > height) {
-        player[3] = height - paddle[1] - 1; //Cannot add "player[1] + paddle[1]" in an assignment; thus, algebra needed
-    
-      }
-    }
-  } //End of keyPressed
-  if (keyPressed == true) {  
-    if (key == 'w' || key == 'W' ) {
       if (player[1] >= 5) { 
         player[1] -= 5; 
       }
@@ -53,27 +33,33 @@ void playGame () {
       }
     }
 
-    if (key == 's' || key == 'S') {
+    if (keyCode == DOWN) {
       if (player[1] + paddle[1] <= height) {
         player[1] += 5; //Review incrementation other than +1
       }
       if (player[1] + paddle[1] > height) {
-        player[1] = height - paddle[1] - 1; 
+        player[1] = height - paddle[1] - 1; //Cannot add "player[1] + paddle[1]" in an assignment; thus, algebra needed
     
       }
     }
-  } 
+  } //End of keyPressed
 
-
+  //Player 2 Movement
+  if (mouseY >=0 || mouseY - paddle[1] < height) {
+    player[3] = mouseY;
+  }
+  if (mouseY >= height - paddle[1]) {
+    player[3] = height - paddle[1] - 1;
+  }
   
  
 
   //Draws the ball
-  fill(255); //Black
+  fill(0); //Black
   ellipse(ballX, ballY, ballDiam, ballDiam);
 
   //Drawing Paddles
-  fill(175, 100, 220); //Purple
+  fill(#FF00FF); //Purple
   rect(player[0], player[1], paddle[0], paddle[1]);
   rect(player[2], player[3], paddle[0], paddle[1]);
   fill(0); //Reseting to Black

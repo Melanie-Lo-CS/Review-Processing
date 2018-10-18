@@ -15,7 +15,7 @@ int [] score = {0, 0};
 //This File is the main file
 //It calls each Procedure in either setup() or draw()
 void setup() {
-  size(700, 600);
+  size(500, 600);
 
   screenChecker();
   
@@ -25,7 +25,7 @@ void setup() {
   
 }
    void draw() {
-     background(0);
+     background(100);
    startStop();
  //arithemetic to calcaulte starting positions of paddles and ball
 

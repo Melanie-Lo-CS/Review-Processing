@@ -18,13 +18,12 @@ void score () {
     
     //Resetting the ARROW Controlled Paddle to the center
     player[1] = height/2 - height/paddleHeightRatio/2;
-     player[3] = height/2 - height/paddleHeightRatio/2;
+    
   }
 
-fill(175, 100, 220);
   textSize(0.1*width);
-  text(score[0], (width*1/5)-(0.1*width), height*1/5); //Printing to ration of screen, Player 1 is minusing width of font
+  text("Player 1:\n" + score[0], (width*1/5)-(0.1*width), height*1/5); //Printing to ration of screen, Player 1 is minusing width of font
   // Note: review of Character escape and this seems to "busy" on the screen
   text(score[1], width*4/5, height*1/5);
-  println ("Score Board is: " + score[0]  + "     " + score[1]);
+  println ("Score Board is: " + score[0] + " Player-1" + "     " + score[1] + " Player-2");
 }
